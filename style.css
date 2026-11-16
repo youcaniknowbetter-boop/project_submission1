@@ -1,0 +1,347 @@
+/* Earth First - CSS (simple, class, id, universal, descendant, attribute and pseudo-class selectors) */
+
+/* universal selector */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* simple (element) selector */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: #0e1a14;
+  color: #e6eee3;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.2;
+  margin-top: 0;
+}
+
+h1 { font-size: 3.2rem; margin-bottom: 20px; }
+h2 { font-size: 2.1rem; margin-bottom: 12px; }
+h3 { font-size: 1.3rem; margin-bottom: 8px; }
+
+a { color: #f2b84b; }
+
+/* class selector: the page content box (box model: padding, margin, width) */
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 max(16px, env(safe-area-inset-left, 0px));
+}
+
+/* ---------- header ---------- */
+header {
+  background-color: #0a130e;
+  border-bottom: 1px solid #2c4538;
+  padding: 14px 0;
+}
+
+header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+
+.logo {
+  margin: 0;
+  color: #7bd88f;
+  font-size: 1.4rem;
+}
+
+/* descendant selector */
+nav a {
+  color: #e6eee3;
+  text-decoration: none;
+  margin-right: 18px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: #f2b84b;
+  text-decoration: underline;
+}
+
+/* ---------- sections ---------- */
+section {
+  padding: 64px 0;
+  border-bottom: 1px solid #1d3327;
+}
+
+#hero {
+  padding: 90px 0 80px;
+  background-color: #12261b;
+}
+
+#hero h1 {
+  color: #f6f3e7;
+}
+
+.lead {
+  font-size: 1.2rem;
+  max-width: 680px;
+  color: #c9d9cd;
+}
+
+.label {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  color: #f2b84b;
+  margin: 0 0 8px;
+}
+
+.intro {
+  max-width: 700px;
+  color: #c9d9cd;
+}
+
+.small {
+  font-size: 0.85rem;
+  color: #9bb3a4;
+}
+
+/* buttons */
+.button {
+  display: inline-block;
+  background-color: #f2b84b;
+  color: #1a1405;
+  padding: 12px 22px;
+  margin: 6px 10px 6px 0;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.button:hover {
+  background-color: #ffd37a;
+}
+
+.button.ghost {
+  background-color: transparent;
+  color: #f2b84b;
+  border: 2px solid #f2b84b;
+}
+
+.button.ghost:hover {
+  background-color: #f2b84b;
+  color: #1a1405;
+}
+
+/* ---------- cards ---------- */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 28px 0;
+}
+
+.card {
+  flex: 1 1 280px;
+  background-color: #16281f;
+  border: 1px solid #2c4538;
+  border-top: 4px solid #ef7b5f;
+  padding: 20px;
+}
+
+.card:hover {
+  background-color: #1b3226;
+}
+
+.card .big {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  color: #ef7b5f;
+  margin: 4px 0;
+}
+
+.card p {
+  margin: 8px 0;
+}
+
+/* hidden by default, JavaScript adds the class "open" */
+.more {
+  display: none;
+  color: #c9d9cd;
+  border-top: 1px dashed #2c4538;
+  padding-top: 10px;
+}
+
+.more.open {
+  display: block;
+}
+
+button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background-color: transparent;
+  color: #7bd88f;
+  border: 1px solid #7bd88f;
+  padding: 7px 14px;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #7bd88f;
+  color: #0e1a14;
+}
+
+button:focus, input:focus {
+  outline: 3px solid #f2b84b;
+}
+
+/* ---------- notes, lists, panels ---------- */
+.note {
+  background-color: #1f2a14;
+  border-left: 5px solid #f2b84b;
+  padding: 16px 20px;
+  max-width: 760px;
+}
+
+.panel {
+  background-color: #16281f;
+  border: 1px solid #2c4538;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.tick-list {
+  padding-left: 0;
+  list-style: none;
+  max-width: 760px;
+}
+
+.tick-list li {
+  padding: 8px 0 8px 30px;
+  position: relative;
+}
+
+.tick-list li:before {
+  content: "\2714";
+  color: #7bd88f;
+  position: absolute;
+  left: 0;
+}
+
+/* slider and progress bars */
+input[type="range"] {
+  width: 100%;
+  margin: 14px 0;
+}
+
+.bar {
+  background-color: #0a130e;
+  border: 1px solid #2c4538;
+  height: 18px;
+  margin: 10px 0 18px;
+}
+
+#barFill, #pledgeFill {
+  height: 100%;
+  width: 0%;
+  background-color: #7bd88f;
+}
+
+#result {
+  color: #f2b84b;
+}
+
+/* ---------- table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+  background-color: #16281f;
+}
+
+th, td {
+  border: 1px solid #2c4538;
+  padding: 12px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: #0a130e;
+  color: #f2b84b;
+}
+
+/* pseudo-class: every second row */
+tr:nth-child(even) td {
+  background-color: #1b3226;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+
+/* ---------- civilization tabs ---------- */
+.tabs {
+  margin: 20px 0 0;
+}
+
+.tabs button {
+  font-size: 1rem;
+  margin-right: 8px;
+  margin-bottom: 6px;
+  padding: 10px 20px;
+}
+
+.tabs button.active {
+  background-color: #f2b84b;
+  border-color: #f2b84b;
+  color: #1a1405;
+  font-weight: bold;
+}
+
+.fact {
+  border-left: 4px solid #7bd88f;
+  padding-left: 14px;
+  color: #c9d9cd;
+}
+
+/* ---------- checklist ---------- */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/* ---------- footer ---------- */
+footer {
+  background-color: #0a130e;
+  padding: 40px 0;
+  text-align: center;
+}
+
+footer h3 {
+  color: #7bd88f;
+}
+
+footer p {
+  margin: 6px 0;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 600px) {
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.7rem; }
+  section { padding: 44px 0; }
+  #hero { padding: 56px 0; }
+  .panel { padding: 16px; }
+  th, td { padding: 8px; font-size: 0.9rem; }
+}

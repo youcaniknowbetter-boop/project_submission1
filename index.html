@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earth First</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap">
+    <h2 class="logo">Earth First</h2>
+    <nav>
+      <a href="#threats">Threats</a>
+      <a href="#together">Together</a>
+      <a href="#mars">Mars</a>
+      <a href="#civilization">Civilization Types</a>
+      <a href="#pledge">My Pledge</a>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="wrap">
+    <p class="label">Environmental protection</p>
+    <h1>Fix Earth first.<br>Then go to Mars.</h1>
+    <p class="lead">Humanity wants to reach another planet while the only one that can keep us alive is getting hotter, dirtier and emptier. This site shows the biggest threats we created, what we can do if we act together, and why the smartest civilization is not the one that takes the most energy, but the one that needs the least.</p>
+    <p>
+      <a class="button" href="#threats">See the threats</a>
+      <a class="button ghost" href="#civilization">Type -1, -2, -3 idea</a>
+    </p>
+  </div>
+</section>
+
+<section id="threats">
+  <div class="wrap">
+    <p class="label">Part 1</p>
+    <h2>The threats we made ourselves</h2>
+    <p class="intro">None of these came from space or from a volcano. They come from how we make energy, grow food, travel and throw things away. Click "Read more" on a card.</p>
+
+    <div class="cards">
+      <div class="card">
+        <h3>Climate change</h3>
+        <p class="big">1.2&deg;C+</p>
+        <p>Earth is already about 1.2&deg;C hotter than before the industrial age, and CO<sub>2</sub> in the air is above 420 parts per million.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">Burning coal, oil and gas traps heat. The result is stronger heat waves, floods, droughts and sea level rise. Coastal cities and farming regions suffer first.</p>
+      </div>
+
+      <div class="card">
+        <h3>Loss of species</h3>
+        <p class="big">1 million</p>
+        <p>Scientists estimate about one million animal and plant species are at risk of extinction.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">Forests are cut, wetlands drained and oceans overfished. When insects, pollinators and fish disappear, our own food supply becomes weaker.</p>
+      </div>
+
+      <div class="card">
+        <h3>Polluted oceans</h3>
+        <p class="big">8 million t</p>
+        <p>Around 8 million tonnes of plastic reach the oceans every year.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">The ocean also absorbs extra CO<sub>2</sub> and becomes more acidic. Coral reefs, shellfish and the fish that feed billions of people are at risk.</p>
+      </div>
+
+      <div class="card">
+        <h3>Water shortage</h3>
+        <p class="big">2.2 billion</p>
+        <p>About 2.2 billion people still do not have safely managed drinking water.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">Glaciers are melting, rivers are polluted and groundwater is pumped faster than it refills. Water shortage can lead to hunger and migration.</p>
+      </div>
+
+      <div class="card">
+        <h3>Dirty air</h3>
+        <p class="big">7 million</p>
+        <p>Air pollution is linked to about 7 million early deaths each year.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">Smoke from vehicles, factories and burning waste harms lungs and hearts. The same fuels that pollute air also cause climate change, so one fix helps both.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tired soil and food</h3>
+        <p class="big">1/3</p>
+        <p>About one third of the world's soil is already degraded.</p>
+        <button onclick="toggleCard(this)">Read more</button>
+        <p class="more">Over-farming, chemicals and deforestation turn fertile land into dust. A growing population needs more food from less healthy land.</p>
+      </div>
+    </div>
+
+    <p class="note">The biggest future danger is that these threats feed each other: heat dries soil, dry soil lowers food, hunger creates conflict. Together they can break the systems that civilization depends on.</p>
+  </div>
+</section>
+
+<section id="together">
+  <div class="wrap">
+    <p class="label">Part 2</p>
+    <h2>What if humanity works together?</h2>
+    <p class="intro">Every solution already exists: solar and wind power, electric transport, forest restoration, recycling and smarter farming. What is missing is everyone doing it at the same time. Move the slider to see the idea.</p>
+
+    <div class="panel">
+      <label for="slider">Share of humanity taking real action: <strong id="percent">40%</strong></label>
+      <input type="range" id="slider" min="0" max="100" value="40" oninput="updateSlider()">
+      <div class="bar"><div id="barFill"></div></div>
+      <h3 id="result">Result</h3>
+      <p id="resultText"></p>
+      <p class="small">This is a simple illustration for learning, not a scientific climate model.</p>
+    </div>
+
+    <ul class="tick-list">
+      <li>Energy: replace fossil fuels with solar, wind and hydro.</li>
+      <li>Food: waste less, eat more plants, protect soil.</li>
+      <li>Nature: plant and protect forests, wetlands and oceans.</li>
+      <li>Things: repair, reuse and recycle instead of throw away.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="mars">
+  <div class="wrap">
+    <p class="label">Part 3</p>
+    <h2>Aiming for Mars, healing Earth</h2>
+    <p class="intro">Space exploration is wonderful. But look at how hard Mars is compared with the planet we are damaging. Even our worst-case Earth is easier to live on than the best-case Mars.</p>
+
+    <table>
+      <tr>
+        <th>Feature</th>
+        <th>Earth (damaged)</th>
+        <th>Mars (today)</th>
+      </tr>
+      <tr>
+        <td>Average temperature</td>
+        <td>About 15&deg;C</td>
+        <td>About -60&deg;C</td>
+      </tr>
+      <tr>
+        <td>Air</td>
+        <td>78% nitrogen, 21% oxygen</td>
+        <td>95% carbon dioxide, almost no oxygen</td>
+      </tr>
+      <tr>
+        <td>Air pressure</td>
+        <td>1 (normal)</td>
+        <td>About 0.6% of Earth's</td>
+      </tr>
+      <tr>
+        <td>Water</td>
+        <td>Oceans, rivers, rain</td>
+        <td>Ice at the poles and underground</td>
+      </tr>
+      <tr>
+        <td>Radiation shield</td>
+        <td>Magnetic field and thick air</td>
+        <td>Very weak</td>
+      </tr>
+      <tr>
+        <td>Journey</td>
+        <td>You are already here</td>
+        <td>6 to 9 months, one way</td>
+      </tr>
+    </table>
+
+    <p class="note">The plan is not "Earth or Mars". Technology built for Mars, such as recycling every drop of water and growing food in closed systems, is exactly what Earth needs. Treat Earth as the practice planet: if we cannot keep one living world healthy, we cannot keep a new one healthy either.</p>
+  </div>
+</section>
+
+<section id="civilization">
+  <div class="wrap">
+    <p class="label">Part 4</p>
+    <h2>Why go small, not only big?</h2>
+    <p class="intro">Scientists rank civilizations on the Kardashev scale by how much energy they use: Type 1 uses the energy of a planet, Type 2 of a star and Type 3 of a galaxy. Humanity is at about Type 0.7. This path means expanding: more energy, bigger machines, more space.</p>
+
+    <p class="intro">Physicist John D. Barrow suggested the opposite direction in 1998: a civilization can also advance by mastering smaller and smaller things, from objects our own size, to genes, to molecules, to atoms. Here these steps are called Type -1, -2 and -3. Instead of expanding, we use microbiology and small-scale science to repair the environment. Click a type.</p>
+
+    <div class="tabs">
+      <button onclick="showType(0)" id="tab0">Type -1</button>
+      <button onclick="showType(1)" id="tab1">Type -2</button>
+      <button onclick="showType(2)" id="tab2">Type -3</button>
+    </div>
+
+    <div class="panel" id="typeBox">
+      <h3 id="typeTitle"></h3>
+      <p id="typeScale" class="label"></p>
+      <p id="typeText"></p>
+      <p id="typeFact" class="fact"></p>
+    </div>
+
+    <h3>Why the small scale has so much potential</h3>
+    <ul class="tick-list">
+      <li><strong>It fixes the cause.</strong> Pollution is made of molecules. If we can break them down and rebuild them, we remove the waste instead of hiding it.</li>
+      <li><strong>Life is the best technology.</strong> Microbes have recycled everything on Earth for about 3.5 billion years. Copying them needs very little energy.</li>
+      <li><strong>It costs less than expanding.</strong> Type 1 needs roughly 500 times more power than we use today. A lab, a microscope and a bucket of bacteria need far less.</li>
+      <li><strong>You can start now.</strong> A student can study biotechnology or chemistry today. Nobody can start building a Dyson sphere.</li>
+      <li><strong>It needs care.</strong> Changing genes and releasing microbes must be tested and controlled, so that the cure does not become a new problem.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="pledge">
+  <div class="wrap">
+    <p class="label">Part 5</p>
+    <h2>My pledge</h2>
+    <p class="intro">Tick what you will do. Start with one.</p>
+
+    <div class="panel">
+      <p><input type="checkbox" class="pledge" id="p1" onclick="updatePledges()"> <label for="p1">Switch off lights and fans when I leave a room</label></p>
+      <p><input type="checkbox" class="pledge" id="p2" onclick="updatePledges()"> <label for="p2">Carry a reusable bottle and bag</label></p>
+      <p><input type="checkbox" class="pledge" id="p3" onclick="updatePledges()"> <label for="p3">Walk, cycle or use public transport</label></p>
+      <p><input type="checkbox" class="pledge" id="p4" onclick="updatePledges()"> <label for="p4">Do not waste food or water</label></p>
+      <p><input type="checkbox" class="pledge" id="p5" onclick="updatePledges()"> <label for="p5">Plant a tree or look after a plant</label></p>
+      <p><input type="checkbox" class="pledge" id="p6" onclick="updatePledges()"> <label for="p6">Repair and reuse before buying new</label></p>
+      <div class="bar"><div id="pledgeFill"></div></div>
+      <p id="pledgeText"></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h3>Earth First</h3>
+    <p>Created by <strong>Pragyan Singh</strong></p>
+    <p>First-year B.Tech student, KIET Deemed to be University &middot; Age 19</p>
+    <p class="small">Figures are rounded, taken from public sources such as IPCC, IPBES, WHO/UNICEF, UNEP and NASA. &copy; <span id="year"></span></p>
+    <p><a href="#top">Back to top</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
